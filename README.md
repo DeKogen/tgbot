@@ -7,10 +7,17 @@ Filters profile cards from a target bot (e.g. @leomatchbot), presses the right b
 - Telegram API ID and hash
 
 ## Setup
-1. Create and activate a venv.
+1. Create and activate a venv:
+   - `python -m venv .venv`
+   - `source .venv/bin/activate`
 2. Install deps: `pip install -r requirements.txt`
-3. Copy `.env.example` to `.env` and fill values.
-4. Run: `python bot.py`
+3. Copy `.env.example` to `.env` and fill values:
+   - `cp .env.example .env`
+   - Set `TG_API_ID`, `TG_API_HASH`, and (optionally) `TG_SESSION`.
+   - Adjust `TARGET_BOT`, keywords, and button labels if needed.
+4. (Optional) Disable auto-start by setting `AUTO_START=0` if you want to manually trigger `/start`.
+5. Run: `python bot.py`
+6. Log in to Telegram when prompted and keep the session file alongside the script.
 
 ## Keyword filtering
 - `INCLUDE_KEYWORDS` and `EXCLUDE_KEYWORDS` accept comma/semicolon/newline lists.
